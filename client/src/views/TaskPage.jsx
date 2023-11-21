@@ -1,8 +1,6 @@
-import CardKanban from "../components/Card";
-import Card from "../components/Card";
 import { BellIcon } from "@heroicons/react/24/outline";
 
-const KanbanPage = () => {
+const TaskPage = () => {
   return (
     <>
       <div className="fixed left-[370px] my-12 right-20">
@@ -12,19 +10,9 @@ const KanbanPage = () => {
             <h1>Welcome to this Kanban Farach Diba</h1>
             <BellIcon className="w-6 h-6 text-white" />
           </div>
-
-          <div className="flex flex-row flex-wrap gap-x-6 gap-y-2">
-            <CardKanban />
-            <CardKanban />
-            <CardKanban />
-            <CardKanban />
-            <CardKanban />
-            <CardKanban />
-          </div>
         </div>
       </div>
     </>
   );
 };
-
-export default KanbanPage;
+export default TaskPage;

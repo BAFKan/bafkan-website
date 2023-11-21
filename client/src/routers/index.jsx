@@ -7,6 +7,7 @@ import HomePage from "../views/HomePage";
 import KanbanPage from "../views/KanbanPage";
 import DashboardPage from "../views/DashboardPage";
 import ChatPage from "../views/ChatPage";
+import TaskPage from "../views/TaskPage";
 
 const router = createBrowserRouter([
   {
@@ -36,12 +37,16 @@ const router = createBrowserRouter([
     element: <DashboardPage />,
     children: [
       {
-        path: "/movement/:id",
+        path: "/kanban",
         element: <KanbanPage />,
       },
       {
-        path: "/fruit/:id",
+        path: "/chat",
         element: <ChatPage />,
+      },
+      {
+        path: "/task",
+        element: <TaskPage />,
       },
     ],
     // loader: async () => {

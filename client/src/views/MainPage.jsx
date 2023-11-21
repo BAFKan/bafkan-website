@@ -5,14 +5,14 @@ import { ProjectProvider, TodoProvider, UserProvider } from "../context";
 const MainPage = () => {
   return (
     <>
-      <ProjectProvider>
+      {/* <ProjectProvider>
         <TodoProvider>
-          <UserProvider>
-            <Navbar />
-            <Outlet />
-          </UserProvider>
+          <UserProvider> */}
+      <Navbar />
+      <Outlet />
+      {/* </UserProvider>
         </TodoProvider>
-      </ProjectProvider>
+      </ProjectProvider> */}
     </>
   );
 };
