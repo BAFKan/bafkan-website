@@ -1,0 +1,27 @@
+[
+  {
+    "name_project": "Define Project Scope",
+    "description": "Clearly outline the goals and boundaries of the Nugroho Adnan project.",
+    "UserId": 1
+  },
+  {
+    "name_project": "Create Project Repository",
+    "description": "Set up a version control repository for the Nugroho Adnan project.",
+    "UserId": 2
+  },
+  {
+    "name_project": "Brainstorm Wordplay Ideas",
+    "description": "Generate creative and engaging wordplay concepts for the project.",
+    "UserId": 3
+  },
+  {
+    "name_project": "User Authentication Setup",
+    "description": "Implement user authentication functionality for the Nugroho Adnan project.",
+    "UserId": 1
+  },
+  {
+    "name_project": "Design Project Logo",
+    "description": "Create a visually appealing and representative logo for the Nugroho Adnan project.",
+    "UserId": 1
+  }
+]

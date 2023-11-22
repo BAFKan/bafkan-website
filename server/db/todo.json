@@ -1,0 +1,32 @@
+[
+  {
+    "name_todo": "Create Project Repository",
+    "description": "Set up a version control repository for the Nugroho Adnan project.",
+    "status": "medium",
+    "ProjectId": 1
+  },
+  {
+    "name_todo": "Brainstorm Wordplay Ideas",
+    "description": "Generate creative and engaging wordplay concepts for the project.",
+    "status": "high",
+    "ProjectId": 2
+  },
+  {
+    "name_todo": "User Authentication Setup",
+    "description": "Implement user authentication functionality for the Nugroho Adnan project.",
+    "status": "low",
+    "ProjectId": 3
+  },
+  {
+    "name_todo": "Design Project Logo",
+    "description": "Create a visually appealing and representative logo for the Nugroho Adnan project.",
+    "status": "medium",
+    "ProjectId": 4
+  },
+  {
+    "name_todo": "Develop Project Homepage",
+    "description": "Code the front-end for the Nugroho Adnan project's landing page.",
+    "status": "high",
+    "ProjectId": 1
+  }
+]
