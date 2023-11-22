@@ -20,6 +20,8 @@ module.exports = {
       },
       ProjectId: {
         type: Sequelize.INTEGER,
+        onDelete: "cascade",
+        onUpdate: "cascade",
         references: {
           model: "Projects",
           key: "id",
