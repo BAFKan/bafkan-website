@@ -43,6 +43,8 @@ module.exports = (sequelize, DataTypes) => {
       UserId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        onDelete: "cascade",
+        onUpdate: "cascade",
         validate: {
           notEmpty: {
             msg: "UserId cannot be empty",
