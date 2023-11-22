@@ -9,8 +9,8 @@ const Chat = () => {
   return (
     <>
       <div className="fixed bg-gray-500/20 backdrop-blur-[2px] z-10 h-screen w-screen items-center">
-        <div className="absolute bg-gradient-to-br from-bk-200/90 to-gray-900/90 w-[450px] right-0 h-[100dvh] z-20 shadow-xl text-white p-10 rounded-l-xl backdrop-blur-sm ">
-          <div className="flex flex-col mb-8">
+        <div className="absolute bg-gradient-to-br from-bk-200/90 to-gray-900/90 w-[450px] right-0 h-[100dvh] z-20 shadow-xl text-white p-10 backdrop-blur-sm ">
+          <div className="flex flex-col mb-4">
             {/* Header Chat */}
             <div className="flex flex-row relative space-x-3 justify-start items-center h-16">
               <ArrowLeftCircleIcon className="w-8 h-8 text-gray-600 hover:text-white transition-all" />
@@ -37,13 +37,7 @@ const Chat = () => {
                 </div>
                 <p className="text-sm">Adnan Nugroho</p>
               </div>
-              {/*  */}
-              <div className="flex w-full flex-col items-end space-y-1">
-                <div className="flex max-w-[250px] bg-bk-300 rounded-lg p-4">
-                  <p>Sounds Good let's jump to the project next month</p>
-                </div>
-                <p className="text-sm">Adnan Nugroho</p>
-              </div>
+
               {/*  */}
               <div className="flex w-full flex-col items-start space-y-1">
                 <div className="flex max-w-[250px] bg-gray-800 rounded-lg p-4">

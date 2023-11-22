@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
+  const [formRegister, setFormRegister] = useState({
+    fullname: "",
+    email: "",
+    password: "",
+  });
+
+  const formRegisterOnChange = (element) => {
+    const { name, value } = element.target;
+    setFormLogin({ ...formRegister, [name]: value });
+  };
+
   return (
     <>
       <div className="flex w-screen h-screen justify-center items-center">
@@ -13,6 +24,7 @@ const RegisterPage = () => {
           <div className="flex flex-col gap-4 p-6">
             <div className="relative h-11 w-full min-w-[200px]">
               <input
+                value={formRegister.fullname}
                 className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-bk-250 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                 placeHolder=" "
               />
