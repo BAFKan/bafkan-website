@@ -37,12 +37,14 @@ const Chat = () => {
                 </div>
                 <p className="text-sm">Adnan Nugroho</p>
               </div>
+              {/*  */}
               <div className="flex w-full flex-col items-end space-y-1">
                 <div className="flex max-w-[250px] bg-bk-300 rounded-lg p-4">
                   <p>Sounds Good let's jump to the project next month</p>
                 </div>
                 <p className="text-sm">Adnan Nugroho</p>
               </div>
+              {/*  */}
               <div className="flex w-full flex-col items-start space-y-1">
                 <div className="flex max-w-[250px] bg-gray-800 rounded-lg p-4">
                   <p>Okay will be there soon</p>

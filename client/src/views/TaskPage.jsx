@@ -4,11 +4,13 @@ import {
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 import Chat from "../components/Chat";
+import FormAddTodos from "../components/FormAddTodos";
 
 const TaskPage = () => {
   return (
     <>
-      {/* <Chat /> */}
+      {/* <FormAddTodos /> */}
+      <Chat />
       <div className="fixed left-[370px] my-12 right-20">
         <div className="flex flex-col flex-wrap">
           {/* This is Profile Section */}

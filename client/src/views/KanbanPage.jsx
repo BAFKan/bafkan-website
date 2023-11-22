@@ -6,7 +6,7 @@ import FormAddProject from "../components/FormAddProject";
 const KanbanPage = () => {
   return (
     <>
-      <FormAddProject />
+      {/* <FormAddProject /> */}
       <div className="fixed left-[370px] my-12 right-20">
         <div className="flex flex-col flex-wrap">
           {/* This is Profile Section */}
