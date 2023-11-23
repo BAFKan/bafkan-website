@@ -6,6 +6,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import BafkanLogo from "../assets/bafkan_logo.png";
+import { Link } from "react-router-dom";
 
 const NavbarHome = () => {
   return (
@@ -34,9 +35,12 @@ const NavbarHome = () => {
             </li>
           </ul>
           <div class="items-center flex-shrink-0 hidden lg:flex">
-            <button class="self-center px-8 py-3 font-semibold rounded-xl dark:bg-violet-400 dark:text-gray-900 hover:bg-gray-300/40 hover:text-bk-250 transition-all">
+            <Link
+              to={"/register"}
+              class="self-center px-8 py-3 font-semibold rounded-xl dark:bg-violet-400 dark:text-gray-900 hover:bg-gray-300/40 hover:text-bk-250 transition-all"
+            >
               Register Now
-            </button>
+            </Link>
           </div>
           <button class="p-4 lg:hidden">
             <svg

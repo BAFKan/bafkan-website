@@ -1,32 +1,52 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { submitLogin, formLoginOnChange } from "../features/user/user-slicer";
+import { motion as m } from "framer-motion";
 
 const LoginPage = () => {
-  const [formLogin, setFormLogin] = useState({
-    email: "",
-    password: "",
-  });
+  const navigate = useNavigate();
+  const variants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
-  const formLoginOnChange = (element) => {
-    const { name, value } = element.target;
-    setFormLogin({ ...formLogin, [name]: value });
+  const dispatch = useDispatch();
+  const { userLoginForm } = useSelector((state) => state.user);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    dispatch(formLoginOnChange({ name, value }));
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    dispatch(submitLogin(userLoginForm, navigate));
   };
 
   return (
     <>
-      <div className="flex w-screen h-screen justify-center items-center">
+      <m.div
+        initial="hidden"
+        animate="visible"
+        variants={variants}
+        transition={{ duration: 0.5 }}
+        className="flex w-screen h-screen justify-center items-center"
+      >
         <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
           <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-bk-250 to-bk-300 bg-clip-border shadow-bk-200/40">
             <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
               Sign In
             </h3>
           </div>
-          <form action="">
+          <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-4 p-6">
               <div className="relative h-11 w-full min-w-[200px]">
                 <input
-                  onChange={formLoginOnChange}
-                  value={formLogin.email}
+                  type="text"
+                  name="email"
+                  onChange={handleInputChange}
+                  value={userLoginForm.email}
                   className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-bk-250 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                 />
@@ -36,8 +56,10 @@ const LoginPage = () => {
               </div>
               <div className="relative h-11 w-full min-w-[200px]">
                 <input
-                  onChange={formLoginOnChange}
-                  value={formLogin.password}
+                  type="password"
+                  name="password"
+                  onChange={handleInputChange}
+                  value={userLoginForm.password}
                   className="w-full h-full px-3 py-3 font-sans text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-bk-250 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
                   placeholder=" "
                 />
@@ -50,7 +72,7 @@ const LoginPage = () => {
             <div className="p-6 pt-0">
               <button
                 className="block w-full select-none rounded-lg bg-gradient-to-tr from-bk-250 to-bk-200 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-bk-200/20 transition-all hover:shadow-lg hover:shadow-bk/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
+                type="submit"
                 data-ripple-light="true"
               >
                 Sign In
@@ -69,7 +91,7 @@ const LoginPage = () => {
             </p>
           </div>
         </div>
-      </div>
+      </m.div>
     </>
   );
 };
