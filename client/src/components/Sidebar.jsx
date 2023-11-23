@@ -20,20 +20,29 @@ import {
   ChatBubbleBottomCenterIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Chat from "./Chat";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  const [open, setOpen] = React.useState(0);
+  const navigate = useNavigate();
   const [openAlert, setOpenAlert] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const { project } = useSelector((state) => state);
 
-  const handleOpen = (value) => {
-    setOpen(open === value ? 0 : value);
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
   };
+
   return (
     <>
+      <Chat isOpen={isOpen} setIsOpen={setIsOpen} />
       <Card className="h-[100dvh] w-full fixed max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
         <div className="mb-2 flex items-center gap-4 p-4">
-          <img src={BafkanLogo} alt="brand" className="h-16" />
+          <Link to={"/"}>
+            <img src={BafkanLogo} alt="brand" className="h-16" />
+          </Link>
         </div>
         <List>
           <Link to={"/kanban"}>
@@ -44,7 +53,11 @@ const SideBar = () => {
               Dashboard
               <ListItemSuffix>
                 <Chip
-                  value="14"
+                  value={
+                    project && project.project && project.project.project
+                      ? project.project.project.length
+                      : 0
+                  }
                   size="sm"
                   variant="ghost"
                   color="blue-gray"
@@ -62,20 +75,22 @@ const SideBar = () => {
               Kanban
             </ListItem>
           </Link>
-          <Link to={"/chat"}>
+          <button onClick={() => setIsOpen(true)}>
             <ListItem className="hover:bg-bk-250 hover:text-white">
               <ListItemPrefix>
                 <ChatBubbleBottomCenterIcon className="h-5 w-5" />
               </ListItemPrefix>
               Chat
             </ListItem>
-          </Link>
-          <ListItem className="hover:bg-bk-250 hover:text-white">
-            <ListItemPrefix>
-              <ArrowRightOnRectangleIcon className="h-5 w-5" />
-            </ListItemPrefix>
-            Log Out
-          </ListItem>
+          </button>
+          <button onClick={() => handleLogout()}>
+            <ListItem className="hover:bg-bk-250 hover:text-white">
+              <ListItemPrefix>
+                <ArrowRightOnRectangleIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              Log Out
+            </ListItem>
+          </button>
         </List>
         <Alert
           open={openAlert}

@@ -6,23 +6,20 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-const CardKanban = () => {
+const CardKanban = ({ index, name, description }) => {
   return (
     <>
       <Card className="mt-6 w-80">
         <div className="absolute">
           <div className="flex rounded-md bg-bk-200 text-white w-6 h-6 items-center justify-center -mx-2">
-            <h1 className="font-bold ">1</h1>
+            <h1 className="font-bold ">{index + 1}</h1>
           </div>
         </div>
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            UI/UX Review Check
+            {name}
           </Typography>
-          <Typography>
-            Because it&apos;s about motivating the doers. Because I&apos;m here
-            to follow my dreams and inspire others.
-          </Typography>
+          <Typography>{description}</Typography>
         </CardBody>
         <CardFooter className="pt-0">
           <a href="#" className="inline-block">

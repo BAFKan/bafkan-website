@@ -1,22 +1,34 @@
 import {
-  BellIcon,
+  PlusCircleIcon,
   TrashIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
-import Chat from "../components/Chat";
-import FormAddTodos from "../components/FormAddTodos";
+import { useDispatch, useSelector } from "react-redux";
+// import { fetchProject } from "../features/project/project-slicer";
+import { useEffect } from "react";
+import { fetchProject } from "../features/project/project-slicer";
 
 const TaskPage = () => {
+  const { project, loading, error } = useSelector((state) => state.project);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // dispatch(fetchProject());
+    // dispatch(projectSlice());
+  }, []);
+
+  // console.log(project, "<<< from project task page");
   return (
     <>
-      {/* <FormAddTodos /> */}
-      {/* <Chat /> */}
+      {console.log(project, "<<< project")}
       <div className="fixed left-[370px] my-12 right-20">
         <div className="flex flex-col flex-wrap">
           {/* This is Profile Section */}
           <div class=" flex flex-row justify-between items-center font-regular relative mb-4 w-full rounded-lg bg-bk-300 p-4 text-base leading-5 text-white opacity-100">
             <h1>This is The Project Title</h1>
-            <BellIcon className="w-6 h-6 text-white" />
+            <button>
+              <PlusCircleIcon className="w-6 h-6 text-white hover:scale-105 transition-all active:scale-90" />
+            </button>
           </div>
         </div>
 
@@ -27,13 +39,10 @@ const TaskPage = () => {
             <div className="absolute top-0 pt-5 w-full flex justify-between items-center rounded-md text-gray-800">
               <div className="flex flex-row gap-x-2">
                 <h1 className="ml-4 font-raleway">To Do</h1>
-                <p className="bg-bk-250 w-8 items-center justify-center flex rounded-lg text-white text-[14px]">
-                  2
-                </p>
               </div>
-              <div className="bg-blue-200/20 text-gray-800 w-8 h-6 flex justify-center items-center mr-5 rounded-lg font-bold">
-                +
-              </div>
+              <p className="bg-bk-250 w-8 items-center justify-center flex rounded-lg text-white text-[14px] mr-5">
+                2
+              </p>
             </div>
             {/* -- Kanban Card */}
             <div className="flex flex-col relative bg-white shadow-md mx-4 h-[175px] w-full rounded-lg transition-all">
@@ -98,13 +107,10 @@ const TaskPage = () => {
             <div className="absolute top-0 pt-5 w-full flex justify-between items-center rounded-md text-gray-800">
               <div className="flex flex-row gap-x-2">
                 <h1 className="ml-4 font-raleway">In Progress</h1>
-                <p className="bg-bk-300 w-8 items-center justify-center flex rounded-lg text-white text-[14px]">
-                  12
-                </p>
               </div>
-              <div className="bg-blue-200/20 text-gray-800 w-8 h-6 flex justify-center items-center mr-5 rounded-lg font-bold">
-                +
-              </div>
+              <p className="bg-bk-250 w-8 items-center justify-center flex rounded-lg text-white text-[14px] mr-5">
+                2
+              </p>
             </div>
             {/* -- Kanban Card */}
             <div className="flex flex-col relative bg-white shadow-md mx-4 h-[175px] w-full rounded-lg transition-all">
@@ -170,13 +176,10 @@ const TaskPage = () => {
             <div className="absolute top-0 pt-5 w-full flex justify-between items-center rounded-md text-gray-800">
               <div className="flex flex-row gap-x-2">
                 <h1 className="ml-4 font-raleway">Success</h1>
-                <p className="bg-bk-300 w-8 items-center justify-center flex rounded-lg text-white text-[14px]">
-                  12
-                </p>
               </div>
-              <div className="bg-blue-200/20 text-gray-800 w-8 h-6 flex justify-center items-center mr-5 rounded-lg font-bold">
-                +
-              </div>
+              <p className="bg-bk-250 w-8 items-center justify-center flex rounded-lg text-white text-[14px] mr-5">
+                2
+              </p>
             </div>
             {/* -- Kanban Card */}
             <div className="flex flex-col relative bg-white shadow-md mx-4 h-[175px] w-full rounded-lg transition-all">
