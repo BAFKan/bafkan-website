@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import Toastify from "toastify-js";
 import Swal from "sweetalert2";
+import { fetchProject } from "../features/project/project-slicer";
+import { useDispatch } from "react-redux";
 
 const initialState = {
   userLoginForm: { email: "", password: "" },
@@ -25,6 +27,7 @@ export const submitLogin = (loginForm, navigate) => async (dispatch) => {
       background: "#000000",
     });
     navigate("/kanban");
+    dispatch(fetchProject());
   } catch (error) {
     // console.log(error.response.data.msg, "<<< from user-slicer");
     Toastify({
