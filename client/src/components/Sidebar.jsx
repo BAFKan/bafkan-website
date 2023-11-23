@@ -23,6 +23,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Chat from "./Chat";
 import { useSelector } from "react-redux";
+import Toastify from "toastify-js";
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -32,6 +33,19 @@ const SideBar = () => {
 
   const handleLogout = () => {
     localStorage.clear();
+    Toastify({
+      text: `Your Account Has Been Logout!`,
+      duration: 3000,
+      position: "center",
+      gravity: "top",
+      close: true,
+      offset: {
+        y: 30,
+      },
+      style: {
+        background: "linear-gradient(to right, #900C3F, #F94C10)",
+      },
+    }).showToast();
     navigate("/login");
   };
 

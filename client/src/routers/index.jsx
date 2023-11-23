@@ -49,26 +49,26 @@ const router = createBrowserRouter([
         element: <TaskPage />,
       },
     ],
-    // loader: async () => {
-    //   if (!localStorage.access_token) {
-    //     Toastify({
-    //       text: `You need to Login First!`,
-    //       duration: 3000,
-    //       position: "center",
-    //       gravity: "top",
-    //       close: true,
-    //       offset: {
-    //         y: 30,
-    //       },
-    //       style: {
-    //         background: "linear-gradient(to right, #900C3F, #F94C10)",
-    //       },
-    //     }).showToast();
-    //     return redirect("/login");
-    //   }
+    loader: async () => {
+      if (!localStorage.access_token) {
+        Toastify({
+          text: `You need to Login First!`,
+          duration: 3000,
+          position: "center",
+          gravity: "top",
+          close: true,
+          offset: {
+            y: 30,
+          },
+          style: {
+            background: "linear-gradient(to right, #900C3F, #F94C10)",
+          },
+        }).showToast();
+        return redirect("/login");
+      }
 
-    //   return null;
-    // },
+      return null;
+    },
   },
 ]);
 
