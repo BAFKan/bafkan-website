@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import Toastify from "toastify-js";
 import Swal from "sweetalert2";
-import { fetchProject } from "../features/project/project-slicer";
+import { fetchProject } from "../project/project-slicer";
 import { useDispatch } from "react-redux";
 
 const initialState = {
